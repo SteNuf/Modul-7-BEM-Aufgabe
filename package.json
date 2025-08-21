@@ -1,0 +1,23 @@
+{
+  "name": "modul-7-bem-aufgabe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "sass --watch style.scss output/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteNuf/Modul-7-BEM-Aufgabe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SteNuf/Modul-7-BEM-Aufgabe/issues"
+  },
+  "homepage": "https://github.com/SteNuf/Modul-7-BEM-Aufgabe#readme",
+  "devDependencies": {
+    "sass": "^1.90.0"
+  }
+}
