@@ -1,3 +1,85 @@
-body {
-  background-color: burlywood;
+@mixin font-family($font) {
+  font-family: $font;
+}
+
+@mixin backgroundColor($color) {
+  background-color: $color;
+}
+
+@mixin borderRadius($border: 2px, $border-style: solid, $border-color: beige) {
+  border: $border;
+  border-color: $border-color;
+  border-style: $border-style;
+}
+
+@mixin widthHeight($width: 23rem, $height: 10rem) {
+  width: $width;
+  height: $height;
+}
+
+@mixin fontSize($size) {
+  font-size: $size;
+}
+
+@mixin frame($top, $bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+.header-title {
+  background-color: green;
+  padding: 10px 10px 10px 10px;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.product-image {
+  @include backgroundColor(orange);
+  @include borderRadius();
+  @include widthHeight();
+  @include font-family(Times New);
+  @include frame(100px, 0);
+  text-align: center;
+}
+
+.product-content {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.product-information-frame {
+  @include backgroundColor(white);
+  @include borderRadius();
+  @include widthHeight(22rem, 8.5rem);
+  padding-left: 1rem;
+}
+
+.product__name {
+  @include frame(15px, 4px);
+  @include fontSize(1.2rem);
+  font-weight: bold;
+  @include font-family(Arial);
+}
+
+.product__text {
+  @include frame(5px, 15px);
+  @include font-family(Times New);
+}
+
+.product__dicount-price {
+  font-weight: bold;
+  @include fontSize(1.5rem);
+}
+
+.product__last-price {
+  text-decoration: line-through;
+  color: red;
+  margin: 0 5px;
+  @include fontSize(1rem);
 }
