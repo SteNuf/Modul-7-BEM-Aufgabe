@@ -27,15 +27,19 @@
 }
 
 .header-title {
-  background-color: green;
-  padding: 10px 10px 10px 10px;
+  @include backgroundColor(white);
+  @include font-family(Times);
+  text-align: center;
+  @include fontSize(2rem);
+  text-decoration: underline orange 5px;
+  margin-top: 2rem;
 }
 
 .product {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 
 .product-image {
