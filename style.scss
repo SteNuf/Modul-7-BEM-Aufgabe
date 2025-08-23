@@ -1,9 +1,15 @@
+$fweight: bolder;
+
 @mixin font-family($font) {
   font-family: $font;
 }
 
 @mixin backgroundColor($color) {
   background-color: $color;
+}
+
+@mixin textColor($color) {
+  color: $color;
 }
 
 @mixin borderRadius($border: 2px, $border-style: solid, $border-color: beige) {
@@ -26,18 +32,24 @@
   padding-bottom: $bottom;
 }
 
+@mixin alignment($dis: flex, $justy: center, $alig: center) {
+  display: $dis;
+  justify-content: $justy;
+  align-items: $alig;
+}
+
 .header-title {
   @include backgroundColor(white);
-  @include font-family(Times);
-  text-align: center;
+  @include font-family(Arial);
   @include fontSize(2rem);
+  font-weight: bolder;
+  text-align: center;
   text-decoration: underline orange 5px;
   margin-top: 2rem;
 }
 
 .product {
-  display: flex;
-  justify-content: center;
+  @include alignment();
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -52,8 +64,7 @@
 }
 
 .product-content {
-  display: flex;
-  justify-content: center;
+  @include alignment();
   gap: 1rem;
 }
 
@@ -67,8 +78,8 @@
 .product__name {
   @include frame(15px, 4px);
   @include fontSize(1.2rem);
-  font-weight: bold;
   @include font-family(Arial);
+  font-weight: $fweight;
 }
 
 .product__text {
@@ -77,13 +88,27 @@
 }
 
 .product__dicount-price {
-  font-weight: bold;
   @include fontSize(1.5rem);
+  font-weight: $fweight;
 }
 
 .product__last-price {
-  text-decoration: line-through;
-  color: red;
-  margin: 0 5px;
+  @include textColor(red);
   @include fontSize(1rem);
+  text-decoration: line-through;
+  margin: 0 5px;
+}
+
+.button-frame {
+  @include alignment();
+}
+
+.product-button {
+  @include backgroundColor(orange);
+  @include borderRadius();
+  margin-top: 6rem;
+
+  @include widthHeight(250px, 70px);
+  @include textColor(white);
+  border-radius: 4px;
 }
