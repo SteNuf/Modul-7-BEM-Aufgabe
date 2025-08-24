@@ -1,16 +1,6 @@
-$fweight: bolder;
-
-@mixin font-family($font) {
-  font-family: $font;
-}
-
-@mixin backgroundColor($color) {
-  background-color: $color;
-}
-
-@mixin textColor($color) {
-  color: $color;
-}
+$primaryC: orange;
+$secondC: white;
+$thirdC: red;
 
 @mixin borderRadius($border: 2px, $border-style: solid, $border-color: beige) {
   border: $border;
@@ -21,10 +11,6 @@ $fweight: bolder;
 @mixin widthHeight($width: 23rem, $height: 10rem) {
   width: $width;
   height: $height;
-}
-
-@mixin fontSize($size) {
-  font-size: $size;
 }
 
 @mixin frame($top, $bottom) {
@@ -39,76 +25,75 @@ $fweight: bolder;
 }
 
 .header-title {
-  @include backgroundColor(white);
-  @include font-family(Arial);
-  @include fontSize(2rem);
+  background-color: $secondC;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
   font-weight: bolder;
   text-align: center;
   text-decoration: underline orange 5px;
   margin-top: 2rem;
 }
 
-.product {
-  @include alignment();
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.product-image {
-  @include backgroundColor(orange);
-  @include borderRadius();
-  @include widthHeight();
-  @include font-family(Times New);
-  @include frame(100px, 0);
+.products {
   text-align: center;
 }
 
-.product-content {
-  @include alignment();
+.product-container {
   gap: 1rem;
-}
-
-.product-information-frame {
-  @include backgroundColor(white);
-  @include borderRadius();
-  @include widthHeight(22rem, 8.5rem);
-  padding-left: 1rem;
-}
-
-.product__name {
-  @include frame(15px, 4px);
-  @include fontSize(1.2rem);
-  @include font-family(Arial);
-  font-weight: $fweight;
-}
-
-.product__text {
-  @include frame(5px, 15px);
-  @include font-family(Times New);
-}
-
-.product__dicount-price {
-  @include fontSize(1.5rem);
-  font-weight: $fweight;
-}
-
-.product__last-price {
-  @include textColor(red);
-  @include fontSize(1rem);
-  text-decoration: line-through;
-  margin: 0 5px;
-}
-
-.button-frame {
+  margin-top: 1rem;
   @include alignment();
+
+  .product-image {
+    @include borderRadius();
+    @include widthHeight(23rem, 15rem);
+    @include frame(100px, 0);
+    background-color: $primaryC;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .product-information-frame {
+    @include borderRadius();
+    @include widthHeight(22.4rem, 8.5rem);
+    background-color: $secondC;
+    margin-top: 14rem;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  .product-information__name {
+    @include frame(15px, 4px);
+    font-family: Arial;
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+
+  .product-information__text {
+    @include frame(5px, 15px);
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .product-information__dicount-price {
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+
+  .product-information__last-price {
+    color: $thirdC;
+    font-size: 1rem;
+    text-decoration: line-through;
+    margin: 0 5px;
+  }
+}
+
+.product-button-container {
+  @include alignment();
+  margin-top: 5rem;
 }
 
 .product-button {
-  @include backgroundColor(orange);
   @include borderRadius();
-  margin-top: 6rem;
-
   @include widthHeight(250px, 70px);
-  @include textColor(white);
-  border-radius: 4px;
+  background-color: $primaryC;
+  color: $secondC;
+  margin-top: 6rem;
 }
