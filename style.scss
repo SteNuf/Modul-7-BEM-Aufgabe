@@ -2,26 +2,9 @@ $primaryC: orange;
 $secondC: white;
 $thirdC: red;
 
-@mixin borderRadius($border: 2px, $border-style: solid, $border-color: beige) {
-  border: $border;
-  border-color: $border-color;
-  border-style: $border-style;
-}
-
-@mixin widthHeight($width: 23rem, $height: 10rem) {
-  width: $width;
-  height: $height;
-}
-
 @mixin frame($top, $bottom) {
   padding-top: $top;
   padding-bottom: $bottom;
-}
-
-@mixin alignment($dis: flex, $justy: center, $alig: center) {
-  display: $dis;
-  justify-content: $justy;
-  align-items: $alig;
 }
 
 .header-title {
@@ -41,19 +24,23 @@ $thirdC: red;
 .product-container {
   gap: 1rem;
   margin-top: 1rem;
-  @include alignment();
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .product-image {
-    @include borderRadius();
-    @include widthHeight(23rem, 15rem);
+    border: 2px, solid beige;
+    width: 23rem;
+    height: 15;
     @include frame(100px, 0);
     background-color: $primaryC;
     font-family: "Times New Roman", Times, serif;
   }
 
   .product-information-frame {
-    @include borderRadius();
-    @include widthHeight(22.4rem, 8.5rem);
+    border: 2px, solid beige;
+    width: 22.4rem;
+    height: 8.5rem;
     background-color: $secondC;
     margin-top: 14rem;
     text-align: left;
@@ -86,13 +73,16 @@ $thirdC: red;
 }
 
 .product-button-container {
-  @include alignment();
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 5rem;
 }
 
 .product-button {
-  @include borderRadius();
-  @include widthHeight(250px, 70px);
+  border: 2px, solid beige;
+  width: 250px;
+  height: 70px;
   background-color: $primaryC;
   color: $secondC;
   margin-top: 6rem;
